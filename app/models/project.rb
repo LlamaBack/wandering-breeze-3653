@@ -7,4 +7,12 @@ class Project < ApplicationRecord
   def contestant_count
     contestants.count
   end
+
+  def avg_experience
+    total = 0.0
+    contestants.each do |contestant|
+      total += contestant.years_of_experience
+    end
+    avg = (total / contestant_count).round(2)
+  end
 end
