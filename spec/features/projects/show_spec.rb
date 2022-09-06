@@ -9,7 +9,6 @@ RSpec.describe '/projects/:id' do
 
     it 'shows project name and material' do
         visit "/projects/#{@news_chic.id}"
-        save_and_open_page
         expect(page).to have_content(@news_chic.name)
         expect(page).to have_content(@news_chic.material)
         expect(page).to have_content(@recycled_material_challenge.theme)
